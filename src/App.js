@@ -8,7 +8,8 @@ class App extends Component {
         super()
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            uid: ''
         }
         this.handleSignup = this.handleSignup.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
@@ -16,15 +17,17 @@ class App extends Component {
 
     
     handleSignup(e){
-        firebase.auth()
+        e.preventDefault();
+        fb.auth()
                 .createUserWithEmailAndPassword(this.state.email, this.state.password)
                 .then(response => (this.setState({
-                    
+                    email: response.email,
+                    uid: response.uid
                 })))
                 .catch(function(error) {
             // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            console.log(error)
+            
             // ...
         });
     };
@@ -38,10 +41,10 @@ class App extends Component {
         return(
             <div>
                 <h1>Magic the Gathering Deckbuilder</h1>
-                <form action="">
+                <form onSubmit={this.handleSignup}>
                     <h2>Signup</h2>
-                    <input type="email" placeholder='Email'/>
-                    <input type="password" placeholder='Password'/>
+                    <input type="email" placeholder='Email' value={this.state.email} onChange={e => this.setState({email: e.target.value})}/>
+                    <input type="password" placeholder='Password' value={this.state.password} onChange={e => this.setState({password: e.target.value})}/>
                     <button >Signup</button>
                 </form>
                 <form action="">
