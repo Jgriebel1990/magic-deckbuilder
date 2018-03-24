@@ -44,7 +44,7 @@ class App extends Component {
       .catch(function(error) {});
   }
   render() {
-    if(fb.then === true){
+    if(this.state.uid){
       return <Library />
     }else {
       null
@@ -52,7 +52,7 @@ class App extends Component {
     return (
       <div>
         <h1>Magic the Gathering Deckbuilder</h1>
-        <form onSubmit={this.handleLogin}>
+        <form onSubmit={this.handleSignup}>
           <h2>Signup</h2>
           <input
             type="email"
@@ -66,7 +66,7 @@ class App extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <button>Signup</button>
+          <button onSubmit={this.handleSignup}>Signup</button>
         </form>
         <form onSubmit={this.handleLogin}>
           <h2>Sign in</h2>
@@ -82,7 +82,7 @@ class App extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <button>Sign in</button>
+          <button onSubmit={this.handleLogin}>Login</button>
         </form>
       </div>
     );
