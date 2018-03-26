@@ -11,9 +11,9 @@ const port = process.env.PORT || 5000;
 
 serverApp.use(express.static("client/build"));
 
-serverApp.get("/cards/:name,:multiverseid", function(request, response) {
+serverApp.get("/v1/cards/:name,:multiverseid", function(request, response) {
   const { name, multiverseid } = request.params;
-  const url = `https://api.magicthegathering.io/cards/${id},${name},${multiverseid}`;
+  const url = `https://api.magicthegathering.io`;
   axios
     .get(url)
     .then(res => {
