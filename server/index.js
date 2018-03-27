@@ -1,9 +1,6 @@
 const express = require("express");
 const axios = require("axios");
 
-//configuration
-require("dotenv").config();
-const { API_KEY } = process.env;
 
 //creation
 const serverApp = express();
@@ -11,9 +8,9 @@ const port = process.env.PORT || 5000;
 
 serverApp.use(express.static("client/build"));
 
-serverApp.get("/v1/cards/:name,:multiverseid", function(request, response) {
-  const { name, multiverseid } = request.params;
-  const url = `https://api.magicthegathering.io`;
+serverApp.get("/cards", function(request, response) {
+  const { pages } = request.params;
+  const url = `https://api.magicthegathering.io/${pages}`;
   axios
     .get(url)
     .then(res => {
