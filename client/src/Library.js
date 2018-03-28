@@ -8,7 +8,7 @@ class Library extends Component{
         <form>
           <input type="text" />
         </form>
-        {/* <button onSubmit={}></button> */}
+        <button>Logout</button>
       </div>
     );
   }

@@ -9,18 +9,22 @@
     "express": "^4.16.3",
     "firebase": "^4.12.0",
     "mtgsdk": "^0.3.0",
+    "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "^1.1.1",
     "react-redux": "^5.0.7",
-    "react": "^16.2.0"
+    "react-scripts": "^1.1.1",
+    "redux": "^3.7.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.2"
+  },
   "scripts": {
     "start": "node server/",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "concurrently 'node server/' 'cd client && npm start'"
+    "serve": "concurrently 'nodemon server/' 'cd client && npm start'"
   },
   "repository": {
     "type": "git",
