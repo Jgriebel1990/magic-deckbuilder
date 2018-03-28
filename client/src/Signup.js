@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import fb from "./firebase-app";
+import Login from './Login'
 
 class Signup extends Component {
   constructor() {
@@ -29,6 +30,11 @@ class Signup extends Component {
   }
 
   render() {
+    if(this.state.uid){
+      return <Login />
+    }else{
+      null
+    }
     return (
       <div>
         <form onSubmit={this.handleSignup}>
