@@ -16,7 +16,7 @@ class SearchBar extends Component {
     const cardResult = mtg.card.where({ name: this.state.search })
     .then(results => {
       const images = results.map(r => r.imageUrl).filter(r => r !== undefined)
-      console.log(images);
+      this.props.onSearch(images)
     })
   }
 
@@ -27,6 +27,7 @@ class SearchBar extends Component {
 
   }
   render() {
+    // const { cards } = this.state;
     return (
       <div>
         <h1>Card Library</h1>
@@ -37,8 +38,6 @@ class SearchBar extends Component {
             value={this.state.search}
           />
         </form>
-        <div>
-        </div>
       </div>
     );
   }

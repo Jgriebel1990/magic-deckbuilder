@@ -1,0 +1,6 @@
+.card-- {
+  border: solid black 1px;
+  display: flex;
+  height: 400px;
+  width: 250px;
+};
