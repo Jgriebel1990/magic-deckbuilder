@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Deck extends Component{
+class Binder extends Component{
   render(){
     return(
       <div>
