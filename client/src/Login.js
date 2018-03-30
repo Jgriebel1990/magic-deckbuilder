@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import fb from "./firebase-app";
-import SearchBar from './SearchBar';
+import Library from './Library';
 
 class Login extends Component {
   constructor() {
@@ -28,7 +28,7 @@ class Login extends Component {
   }
   render() {
     if(this.state.uid){
-      return <SearchBar />
+      return <Library />
     }else {
       null
     };

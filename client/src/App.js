@@ -3,7 +3,7 @@ import fb from "./firebase-app";
 import "./App.css";
 //Components
 import Login from './Login';
-import SearchBar from './SearchBar';
+import Library from './Library';
 import Signup from './Signup';
 
 
@@ -22,7 +22,7 @@ class App extends Component {
     const images = cards.map(url => <img src={url}/>)
     return (
       <div>
-        <SearchBar onSearch={cards => this.setState({cards: cards})}/>
+        <Library onSearch={cards => this.setState({cards: cards})}/>
         {images}
       </div>
     );

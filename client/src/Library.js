@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import mtg from "mtgsdk";
 
-class SearchBar extends Component {
+class Library extends Component {
   constructor() {
     super();
     this.state = {
@@ -46,4 +46,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default Library;
