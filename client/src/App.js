@@ -11,10 +11,12 @@ class App extends Component {
     super();
     this.state = {
       cards: [],
-      search: ""
+      search: "",
+      binder: []
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBinder = this.handleBinder.bind(this);
   }
   handleSearch(e) {
     this.setState({
@@ -31,14 +33,29 @@ class App extends Component {
           .filter(card => card.name.toLowerCase() === this.state.search)
           .map(card => card.imageUrl);
         this.setState({
-          cards: images
+          cards: images,
         })
       });
   }
 
+  handleBinder(index){
+    this.setState({
+      binder: [
+        ...this.state.binder,
+        this.state.cards[index]
+      ]
+    });
+  }
+
   render() {
     const { cards } = this.state;
-    const images = cards.map(url => <img onClick={() => console.log(url)} src={url} />);
+    const images = cards.map((url, index) => <img onClick={() => this.handleBinder(index)} src={url} />);
+    // const addCard = (url) => this.state.binder
+    // if(this.handleBinder){
+    //   return images;
+    // }else{
+    //   return true
+    // }
     return (
       <div>
         <h1>Card Library</h1>
@@ -49,9 +66,11 @@ class App extends Component {
             value={this.state.search}
           />
         </form>
-        {/* <Library onSearch={cards => this.setState({cards: cards})}
-                 cards={this.props.cards}/> */}
-        <div>{images}</div>
+        {images}
+        <div>
+          <h1>Binder</h1>
+          {this.state.binder.map(url => <img src={url}/> )}
+        </div>
       </div>
     );
   }
