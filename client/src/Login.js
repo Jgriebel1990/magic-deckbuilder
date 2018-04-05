@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import fb from "./firebase-app";
-import Library from './Library';
+
 
 class Login extends Component {
   constructor() {
@@ -27,11 +28,6 @@ class Login extends Component {
       .catch(function(error) {});
   }
   render() {
-    if(this.state.uid){
-      return <Library />
-    }else {
-      null
-    };
     return (
       <div>
         <form onSubmit={this.handleLogin}>

@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import fb from "./firebase-app";
 import mtg from "mtgsdk";
 import "./App.css";
+import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 //Components
 import Login from "./Login";
 import Signup from "./Signup";
+import Navigation from './Navigation';
 
 class App extends Component {
   constructor() {
@@ -64,7 +66,7 @@ class App extends Component {
 
   saveBinder(index) {
     this.setState({
-      
+
     })
   }
 
@@ -75,6 +77,7 @@ class App extends Component {
     ));
     return (
       <div>
+        <Navigation />
         <h1>Card Library</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -92,9 +95,11 @@ class App extends Component {
         </div>
         <button onClick={index => this.removeDeck(index)}>Reset</button>
         <button>Save</button>
+        <Route path='/login' component={Login} />
+        <Route path='/signup' exact component={Signup} />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
