@@ -12,6 +12,7 @@ class Login extends Component {
       uid: ""
     };
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogin(e) {
@@ -22,10 +23,23 @@ class Login extends Component {
       .then(response => {
         this.setState({
           email: response.email,
-          uid: response.uid
+          uid: response.uid,
+          password: ''
         });
       })
       .catch(function(error) {});
+  }
+
+  handleLogout(e){
+    e.preventDefault();
+    fb.auth()
+      .signOut()
+      .then(response => {
+        this.setState({
+          email: '',
+          uid: ''
+        })
+      })
   }
   render() {
     return (
@@ -44,8 +58,9 @@ class Login extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <button onSubmit={this.handleLogin}>Login</button>
+          <button>Login</button>
         </form>
+        <button onClick={this.handleLogout}>Logout</button>
       </div>
     );
   }
