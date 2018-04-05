@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import fb from "./firebase-app";
-import mtg from 'mtgsdk';
+import mtg from "mtgsdk";
 import "./App.css";
 //Components
 import Login from "./Login";
@@ -36,46 +36,43 @@ class App extends Component {
           .filter(card => card.name.toLowerCase() === this.state.search)
           .map(card => card.imageUrl);
         this.setState({
-          cards: images,
-        })
+          cards: images
+        });
       });
   }
 
-  handleBinder(index){
+  handleBinder(index) {
     this.setState({
-      binder: [
-        ...this.state.binder,
-        this.state.cards[index]
-      ]
+      binder: [...this.state.binder, this.state.cards[index]]
     });
   }
 
-  removeCard(position){
+  removeCard(position) {
     const first = this.state.binder.slice(0, position);
     const last = this.state.binder.slice(position + 1);
-    const newBinder = [
-      ...first,
-      ...last
-    ]
+    const newBinder = [...first, ...last];
     this.setState({
       binder: newBinder
-    })
+    });
   }
 
-  removeDeck(index){
+  removeDeck(index) {
     this.setState({
       binder: []
-    })
+    });
   }
 
-  saveBinder(index){
-    this.setState
+  saveBinder(index) {
+    this.setState({
+      
+    })
   }
-  
 
   render() {
     const { cards } = this.state;
-    const images = cards.map((url, index) => <img onClick={() => this.handleBinder(index)} src={url} />);
+    const images = cards.map((url, index) => (
+      <img onClick={() => this.handleBinder(index)} src={url} />
+    ));
     return (
       <div>
         <h1>Card Library</h1>
@@ -89,9 +86,11 @@ class App extends Component {
         {images}
         <div>
           <h1>Binder</h1>
-          {this.state.binder.map((url, index) => <img src={url} key={url} onClick={() => this.removeCard(index)}/> )}
+          {this.state.binder.map((url, index) => (
+            <img src={url} key={url} onClick={() => this.removeCard(index)} />
+          ))}
         </div>
-        <button onClick={(index) => this.removeDeck(index)}>Reset</button>
+        <button onClick={index => this.removeDeck(index)}>Reset</button>
         <button>Save</button>
       </div>
     );
