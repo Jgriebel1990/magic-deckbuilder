@@ -17,6 +17,9 @@ class App extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBinder = this.handleBinder.bind(this);
+    this.removeCard = this.removeCard.bind(this);
+    this.saveBinder = this.saveBinder.bind(this);
+    this.removeDeck = this.removeDeck.bind(this);
   }
   handleSearch(e) {
     this.setState({
@@ -47,15 +50,32 @@ class App extends Component {
     });
   }
 
+  removeCard(position){
+    const first = this.state.binder.slice(0, position);
+    const last = this.state.binder.slice(position + 1);
+    const newBinder = [
+      ...first,
+      ...last
+    ]
+    this.setState({
+      binder: newBinder
+    })
+  }
+
+  removeDeck(index){
+    this.setState({
+      binder: []
+    })
+  }
+
+  saveBinder(index){
+    this.setState
+  }
+  
+
   render() {
     const { cards } = this.state;
     const images = cards.map((url, index) => <img onClick={() => this.handleBinder(index)} src={url} />);
-    // const addCard = (url) => this.state.binder
-    // if(this.handleBinder){
-    //   return images;
-    // }else{
-    //   return true
-    // }
     return (
       <div>
         <h1>Card Library</h1>
@@ -69,8 +89,10 @@ class App extends Component {
         {images}
         <div>
           <h1>Binder</h1>
-          {this.state.binder.map(url => <img src={url}/> )}
+          {this.state.binder.map((url, index) => <img src={url} key={url} onClick={() => this.removeCard(index)}/> )}
         </div>
+        <button onClick={(index) => this.removeDeck(index)}>Reset</button>
+        <button>Save</button>
       </div>
     );
   }
