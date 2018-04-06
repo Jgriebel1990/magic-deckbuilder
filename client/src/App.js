@@ -29,28 +29,11 @@ class App extends Component {
     });
   }
   render() {
+    console.log('pass history.push into login to render certainthings when logged in')
     const { history } = this.props;
     return (
       <div>
         <Navigation uid={this.state.user.uid} />
-
-        {/* <h1>Card Library</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            onChange={e => this.setState({ search: e.target.value })}
-            value={this.state.search}
-          />
-        </form>
-        {images}
-        <div>
-          <h1>Binder</h1>
-          {this.state.binder.map((url, index) => (
-            <img src={url} key={url} onClick={() => this.removeCard(index)} />
-          ))}
-        </div>
-        <button onClick={index => this.removeDeck(index)}>Reset</button>
-        <button>Save</button> */}
         <Switch>
           <Route path="/" exact render={props => <Library {...this.state} {...props}/>} />
           <Redirect from="/login/*" to="/login" />
