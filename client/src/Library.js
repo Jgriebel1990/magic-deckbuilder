@@ -84,6 +84,8 @@ class Library extends Component {
           {this.state.binder.map((url, index) => (
             <img src={url} key={url} onClick={() => this.removeCard(index)} />
           ))}
+        </div>
+        <div>
           <button className='btn btn-primary' onClick={index => this.removeDeck(index)}>Reset</button>
         </div>
       </div>

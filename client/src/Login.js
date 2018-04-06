@@ -9,10 +9,8 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      uid: ""
     };
     this.handleLogin = this.handleLogin.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogin(e) {
@@ -20,34 +18,10 @@ class Login extends Component {
     fb
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(response => {
-        this.setState({
-          email: response.email,
-          uid: response.uid,
-          password: ""
-        });
-      })
       .catch(function(error) {});
   }
 
-  handleLogout(e) {
-    e.preventDefault();
-    fb
-      .auth()
-      .signOut()
-      .then(response => {
-        this.setState({
-          email: "",
-          uid: ""
-        });
-      });
-  }
   render() {
-    if (this.state.uid) {
-      return <Library />;
-    } else {
-      null;
-    }
     return (
       <div>
         <form onSubmit={this.handleLogin}>
@@ -66,7 +40,6 @@ class Login extends Component {
           />
           <button>Login</button>
         </form>
-        <button onClick={this.handleLogout}>Logout</button>
       </div>
     );
   }

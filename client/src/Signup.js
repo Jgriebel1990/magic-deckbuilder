@@ -8,8 +8,7 @@ class Signup extends Component {
     super();
     this.state = {
       email: "",
-      password: "",
-      uid: ""
+      password: ""
     };
     this.handleSignup = this.handleSignup.bind(this);
   }
@@ -19,15 +18,6 @@ class Signup extends Component {
     fb
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(response => {
-        this.setState({
-          email: response.email,
-          uid: response.uid
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   }
 
   render() {
