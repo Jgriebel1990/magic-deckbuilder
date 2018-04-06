@@ -31,11 +31,6 @@ class Signup extends Component {
   }
 
   render() {
-    if(this.state.uid){
-      return <Login />
-    }else{
-      null
-    }
     return (
       <div>
         <form onSubmit={this.handleSignup}>

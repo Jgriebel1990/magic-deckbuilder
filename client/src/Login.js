@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import fb from "./firebase-app";
-
+import Library from './Library';
 
 class Login extends Component {
   constructor() {
@@ -24,24 +24,30 @@ class Login extends Component {
         this.setState({
           email: response.email,
           uid: response.uid,
-          password: ''
+          password: ""
         });
       })
       .catch(function(error) {});
   }
 
-  handleLogout(e){
+  handleLogout(e) {
     e.preventDefault();
-    fb.auth()
+    fb
+      .auth()
       .signOut()
       .then(response => {
         this.setState({
-          email: '',
-          uid: ''
-        })
-      })
+          email: "",
+          uid: ""
+        });
+      });
   }
   render() {
+    if (this.state.uid) {
+      return <Library />;
+    } else {
+      null;
+    }
     return (
       <div>
         <form onSubmit={this.handleLogin}>

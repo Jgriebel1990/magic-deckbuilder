@@ -6,10 +6,15 @@ class Library extends Component {
   constructor() {
     super();
     this.state = {
-      search: ""
+      cards: [],
+      search: "",
+      binder: []
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBinder = this.handleBinder.bind(this);
+    this.removeCard = this.removeCard.bind(this);
+    this.removeDeck = this.removeDeck.bind(this);
   }
 
   handleSubmit(e) {
@@ -22,7 +27,9 @@ class Library extends Component {
             card => card.name.toLowerCase() === this.state.search.toLowerCase()
           )
           .map(card => card.imageUrl);
-        this.props.onSearch(images);
+        this.setState({
+          cards: images
+        });
       });
   }
 
@@ -32,7 +39,33 @@ class Library extends Component {
     });
   }
 
+  handleBinder(index) {
+    this.setState({
+      binder: [...this.state.binder, this.state.cards[index]]
+    });
+  }
+
+  removeCard(position) {
+    const first = this.state.binder.slice(0, position);
+    const last = this.state.binder.slice(position + 1);
+    const newBinder = [...first, ...last];
+    this.setState({
+      binder: newBinder
+    });
+  }
+
+  removeDeck(index) {
+    this.setState({
+      binder: []
+    });
+  }
+
   render() {
+    const { cards } = this.state;
+    const images = cards.map((url, index) => (<img onClick={() => this.handleBinder(index)} src={url}/>));
+    // const binder = this.state.binder.map((url, index) => (
+    //   <img sry={url} key={url} onClick={() => this.removeCard(index)} />
+    // ));
     return (
       <div>
         <h1>Card Library</h1>
@@ -43,6 +76,16 @@ class Library extends Component {
             value={this.state.search}
           />
         </form>
+        {images}
+        <div>
+          <h1>
+            Binder
+          </h1>
+          {this.state.binder.map((url, index) => (
+            <img src={url} key={url} onClick={() => this.removeCard(index)} />
+          ))}
+          <button className='btn btn-primary' onClick={index => this.removeDeck(index)}>Reset</button>
+        </div>
       </div>
     );
   }
