@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import fb from "./firebase-app";
-import Library from './Library';
+import Library from "./Library";
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       email: "",
-      password: "",
+      password: ""
     };
     this.handleLogin = this.handleLogin.bind(this);
   }
@@ -18,7 +18,7 @@ class Login extends Component {
     fb
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push("/"))
       .catch(function(error) {});
   }
 

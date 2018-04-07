@@ -17,7 +17,6 @@ class App extends Component {
     fb.auth().onAuthStateChanged(user => {
       if (user) {
         console.log(user);
-        console.log(fb.auth().currentUser);
         this.setState({
          user: user
         });

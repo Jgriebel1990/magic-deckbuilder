@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import mtg from "mtgsdk";
 
 class Library extends Component {
@@ -62,10 +62,9 @@ class Library extends Component {
 
   render() {
     const { cards } = this.state;
-    const images = cards.map((url, index) => (<img onClick={() => this.handleBinder(index)} src={url}/>));
-    // const binder = this.state.binder.map((url, index) => (
-    //   <img sry={url} key={url} onClick={() => this.removeCard(index)} />
-    // ));
+    const images = cards.map((url, index) => (
+      <img onClick={() => this.handleBinder(index)} src={url} />
+    ));
     return (
       <div>
         <h1>Card Library</h1>
@@ -78,15 +77,18 @@ class Library extends Component {
         </form>
         {images}
         <div>
-          <h1>
-            Binder
-          </h1>
+          <h1>Binder</h1>
           {this.state.binder.map((url, index) => (
             <img src={url} key={url} onClick={() => this.removeCard(index)} />
           ))}
         </div>
         <div>
-          <button className='btn btn-primary' onClick={index => this.removeDeck(index)}>Reset</button>
+          <button
+            className="btn btn-primary"
+            onClick={index => this.removeDeck(index)}
+          >
+            Reset
+          </button>
         </div>
       </div>
     );
