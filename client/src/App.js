@@ -29,7 +29,6 @@ class App extends Component {
     });
   }
   render() {
-    console.log('pass history.push into login to render certainthings when logged in')
     const { history } = this.props;
     return (
       <div>

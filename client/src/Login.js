@@ -18,6 +18,7 @@ class Login extends Component {
     fb
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(() => this.props.history.push('/'))
       .catch(function(error) {});
   }
 
