@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import fb from "./firebase-app";
-import Library from './Library';
+import Library from "./Library";
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       email: "",
-      password: "",
-      uid: ""
+      password: ""
     };
     this.handleLogin = this.handleLogin.bind(this);
   }
@@ -18,20 +18,11 @@ class Login extends Component {
     fb
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(response => {
-        this.setState({
-          email: response.email,
-          uid: response.uid
-        });
-      })
+      .then(() => this.props.history.push("/"))
       .catch(function(error) {});
   }
+
   render() {
-    if(this.state.uid){
-      return <Library />
-    }else {
-      null
-    };
     return (
       <div>
         <form onSubmit={this.handleLogin}>
@@ -48,7 +39,7 @@ class Login extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <button onSubmit={this.handleLogin}>Login</button>
+          <button>Login</button>
         </form>
       </div>
     );
