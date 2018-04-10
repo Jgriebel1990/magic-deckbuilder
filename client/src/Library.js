@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import mtg from "mtgsdk";
+import fb from "./firebase-app";
+import { db } from "./firebase-app";
 
 class Library extends Component {
   constructor() {
@@ -15,6 +17,8 @@ class Library extends Component {
     this.handleBinder = this.handleBinder.bind(this);
     this.removeCard = this.removeCard.bind(this);
     this.removeDeck = this.removeDeck.bind(this);
+    this.saveBinder = this.saveBinder.bind(this);
+    // this.retrieveBinder = this.retrieveBinder.bind(this);
   }
 
   handleSubmit(e) {
@@ -54,16 +58,31 @@ class Library extends Component {
     });
   }
 
-  removeDeck(index) {
+  removeDeck(e) {
     this.setState({
       binder: []
     });
   }
 
+  saveBinder(e) {
+    const addDoc = db
+      .collection("decks")
+      .add({
+        user: this.props.user.uid,
+        card: 'poopy'
+
+      })
+      .then(ref => {
+        console.log("added document with ID:", ref.id);
+      });
+  }
+  
+  // retrieveBinder(e) {}
+
   render() {
     const { cards } = this.state;
     const images = cards.map((url, index) => (
-      <img onClick={() => this.handleBinder(index)} src={url} />
+      <img onClick={() => this.handleBinder(index)} src={url} key={url} />
     ));
     return (
       <div>
@@ -79,7 +98,11 @@ class Library extends Component {
         <div>
           <h1>Binder</h1>
           {this.state.binder.map((url, index) => (
-            <img src={url} key={url} onClick={() => this.removeCard(index)} />
+            <img
+              src={url}
+              key={url + index}
+              onClick={() => this.removeCard(index)}
+            />
           ))}
         </div>
         <div>
@@ -89,6 +112,7 @@ class Library extends Component {
           >
             Reset
           </button>
+          <button onClick={() => this.saveBinder()}>Save</button>
         </div>
       </div>
     );
