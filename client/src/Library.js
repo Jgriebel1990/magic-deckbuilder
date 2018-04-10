@@ -69,7 +69,7 @@ class Library extends Component {
       .collection("decks")
       .add({
         user: this.props.user.uid,
-        card: 'poopy'
+        card: this.state.cards
 
       })
       .then(ref => {
