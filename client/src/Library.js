@@ -65,8 +65,8 @@ class Library extends Component {
   }
 
   saveBinder(e) {
-    const decksRef = db.collection('decks').doc('');
-    const updateSingle = decksRef.update({ cards: this.props.binder})
+    const decksRef = db.collection("decks").doc("");
+    const updateSingle = decksRef.update({ cards: this.props.binder });
     const addDoc = db
       .collection("decks")
       .add({
@@ -80,19 +80,20 @@ class Library extends Component {
 
   retrieveDecks(e) {
     const decksRef = db.collection("decks");
-    const queryRef = decksRef.where("cards", "==", "userId");
-    if(queryRef){
-      return this.state.binder
-    } else {
-      null
-    }
+    console.log(decksRef);
+    decksRef
+      .where("userId", "==", this.props.user.uid)
+      .get()
+      .then(response =>
+        this.setState({
+          binder: response.docs[0].data().cards
+        })
+      );
+
     // const first = db.collection('decks').orderBy('userId').limit(1);
     // const paginate = first.get().then((snapshot) => {
 
     // })
-    
-
-    console.log(queryRef);
   }
 
   render() {
