@@ -10,7 +10,8 @@ class Library extends Component {
     this.state = {
       cards: [],
       search: "",
-      binder: []
+      binder: [],
+      didUpdate: true
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -97,7 +98,6 @@ class Library extends Component {
       .update({
         cards: this.state.binder
       })
-      .then();
   }
 
   render() {
@@ -109,6 +109,10 @@ class Library extends Component {
         key={url + index}
       />
     ));
+    // const updateSuccessful = {
+    //   visibility: this.state.didUpdate ? 'visible' : 'hidden',
+    //   opacity: this.state.didUpdate ? 1 : 0,
+    // }
     return (
       <div className="container">
         <h1>Card Library</h1>
@@ -144,6 +148,7 @@ class Library extends Component {
             Retrieve Saved Deck
           </button>
           <button onClick={() => this.updateDeck()}>Update</button>
+          {/* <p style={updateSuccessful}>update yes</p> */}
         </div>
       </div>
     );

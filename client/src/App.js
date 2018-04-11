@@ -33,7 +33,7 @@ class App extends Component {
       <div>
         <Navigation uid={this.state.user.uid} />
         <Switch>
-          <Route path="/" exact render={props => <Library {...this.state} {...props}/>} />
+          <Route path="/library" exact render={props => <Library {...this.state} {...props}/>} />
           <Redirect from="/login/*" to="/login" />
           <Route path="/login" exact component={Login} />
           <Redirect path="/signup/*" to="/signup" />

@@ -32,7 +32,7 @@ class Navigation extends Component {
           <Link className="btn btn-primary" style={loggedOutStyles} to="/login">
             Login
           </Link>
-          <Link className='btn btn-primary' style={loggedInStyles} to='/'>Home</Link>
+          {/* <Link className='btn btn-primary' style={loggedInStyles} to='library'>Home</Link> */}
           <button className='btn btn-primary' style={loggedInStyles} onClick={this.handleLogout}>Logout</button>
         </div>
       </nav>
