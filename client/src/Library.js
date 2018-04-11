@@ -18,7 +18,7 @@ class Library extends Component {
     this.removeCard = this.removeCard.bind(this);
     this.removeDeck = this.removeDeck.bind(this);
     this.saveBinder = this.saveBinder.bind(this);
-    // this.retrieveBinder = this.retrieveBinder.bind(this);
+    this.retrieveDecks = this.retrieveDecks.bind(this);
   }
 
   handleSubmit(e) {
@@ -65,24 +65,44 @@ class Library extends Component {
   }
 
   saveBinder(e) {
+    const decksRef = db.collection('decks').doc('');
+    const updateSingle = decksRef.update({ cards: this.props.binder})
     const addDoc = db
       .collection("decks")
       .add({
-        user: this.props.user.uid,
-        card: this.state.cards
-
+        userId: this.props.user.uid,
+        cards: this.state.binder
       })
       .then(ref => {
         console.log("added document with ID:", ref.id);
       });
   }
-  
-  // retrieveBinder(e) {}
+
+  retrieveDecks(e) {
+    const decksRef = db.collection("decks");
+    const queryRef = decksRef.where("cards", "==", "userId");
+    if(queryRef){
+      return this.state.binder
+    } else {
+      null
+    }
+    // const first = db.collection('decks').orderBy('userId').limit(1);
+    // const paginate = first.get().then((snapshot) => {
+
+    // })
+    
+
+    console.log(queryRef);
+  }
 
   render() {
     const { cards } = this.state;
     const images = cards.map((url, index) => (
-      <img onClick={() => this.handleBinder(index)} src={url} key={url} />
+      <img
+        onClick={() => this.handleBinder(index)}
+        src={url}
+        key={url + index}
+      />
     ));
     return (
       <div>
@@ -113,6 +133,11 @@ class Library extends Component {
             Reset
           </button>
           <button onClick={() => this.saveBinder()}>Save</button>
+        </div>
+        <div>
+          <button onClick={() => this.retrieveDecks()}>
+            Retrieve Saved Deck
+          </button>
         </div>
       </div>
     );
