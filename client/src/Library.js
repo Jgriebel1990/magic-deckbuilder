@@ -19,6 +19,7 @@ class Library extends Component {
     this.removeDeck = this.removeDeck.bind(this);
     this.saveBinder = this.saveBinder.bind(this);
     this.retrieveDecks = this.retrieveDecks.bind(this);
+    this.updateDeck = this.updateDeck.bind(this);
   }
 
   handleSubmit(e) {
@@ -65,8 +66,6 @@ class Library extends Component {
   }
 
   saveBinder(e) {
-    const decksRef = db.collection("decks").doc("");
-    const updateSingle = decksRef.update({ cards: this.props.binder });
     const addDoc = db
       .collection("decks")
       .add({
@@ -89,11 +88,16 @@ class Library extends Component {
           binder: response.docs[0].data().cards
         })
       );
+      
+  }
 
-    // const first = db.collection('decks').orderBy('userId').limit(1);
-    // const paginate = first.get().then((snapshot) => {
-
-    // })
+  updateDeck(e) {
+    const deckRef = db.collection("decks").doc("2O1GT3vZrg5NNoOKs4HU")
+    const updateSingle = deckRef
+      .update({
+        cards: this.state.binder
+      })
+      .then();
   }
 
   render() {
@@ -106,7 +110,7 @@ class Library extends Component {
       />
     ));
     return (
-      <div>
+      <div className="container">
         <h1>Card Library</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -139,6 +143,7 @@ class Library extends Component {
           <button onClick={() => this.retrieveDecks()}>
             Retrieve Saved Deck
           </button>
+          <button onClick={() => this.updateDeck()}>Update</button>
         </div>
       </div>
     );
