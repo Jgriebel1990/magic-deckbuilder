@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import mtg from "mtgsdk";
 import fb from "./firebase-app";
 import { db } from "./firebase-app";
+import './CSS/library.css'
 
 class Library extends Component {
   constructor() {
@@ -115,40 +116,41 @@ class Library extends Component {
     // }
     return (
       <div className="container">
-        <h1>Card Library</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            onChange={e => this.setState({ search: e.target.value })}
-            value={this.state.search}
-          />
-        </form>
-        {images}
-        <div>
-          <h1>Binder</h1>
-          {this.state.binder.map((url, index) => (
-            <img
-              src={url}
-              key={url + index}
-              onClick={() => this.removeCard(index)}
-            />
-          ))}
-        </div>
-        <div>
-          <button
+        <div className='row'>
+          <div className='col'>
+            <h1>Card Library</h1>
+            <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              onChange={e => this.setState({ search: e.target.value })}
+              value={this.state.search}
+              />
+            </form>
+            <section className='scroll-box'>
+              {images}
+            </section>
+          </div>
+          <div className='col'>
+            <h1>Binder</h1>
+            {this.state.binder.map((url, index) => (
+              <img
+                src={url}
+                key={url + index}
+                onClick={() => this.removeCard(index)}
+              />
+            ))}
+            <button
             className="btn btn-primary"
             onClick={index => this.removeDeck(index)}
-          >
+            >
             Reset
-          </button>
-          <button onClick={() => this.saveBinder()}>Save</button>
-        </div>
-        <div>
-          <button onClick={() => this.retrieveDecks()}>
+            </button>
+            <button onClick={() => this.saveBinder()}>Save</button>
+            <button onClick={() => this.retrieveDecks()}>
             Retrieve Saved Deck
-          </button>
-          <button onClick={() => this.updateDeck()}>Update</button>
-          {/* <p style={updateSuccessful}>update yes</p> */}
+            </button>
+            <button onClick={() => this.updateDeck()}>Update</button>
+          </div>
         </div>
       </div>
     );

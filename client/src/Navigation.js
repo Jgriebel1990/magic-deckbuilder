@@ -24,7 +24,7 @@ class Navigation extends Component {
     }
     const { history } = this.props;
     return (
-      <nav className="navbar navbar-light bg-light container">
+      <nav className="navbar navbar-light bg-light">
         <div className="form-inline">
           <Link className="btn btn-primary" style={loggedOutStyles} to="/signup">
             Signup

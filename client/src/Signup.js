@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import fb from "./firebase-app";
-import Login from './Login'
+import Login from "./Login";
+import "./CSS/signup.css";
 
 class Signup extends Component {
   constructor() {
@@ -17,28 +18,32 @@ class Signup extends Component {
     e.preventDefault();
     fb
       .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .createUserWithEmailAndPassword(this.state.email, this.state.password);
   }
 
   render() {
     return (
-      <div className='container'>
-        <form onSubmit={this.handleSignup}>
-          <h2>Signup</h2>
-          <input
-            type="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={e => this.setState({ email: e.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={e => this.setState({ password: e.target.value })}
-          />
-          <button onSubmit={this.handleSignup}>Signup</button>
-        </form>
+      <div className="container d-flex">
+        <div className="row">
+          <div className='col-md-6'>
+            <form onSubmit={this.handleSignup}>
+              <h2>Signup</h2>
+              <input
+                type="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={e => this.setState({ email: e.target.value })}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={e => this.setState({ password: e.target.value })}
+              />
+              <button onSubmit={this.handleSignup}>Signup</button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }

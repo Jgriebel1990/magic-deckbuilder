@@ -24,23 +24,27 @@ class Login extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <form onSubmit={this.handleLogin}>
-          <h2>Login</h2>
-          <input
-            type="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={e => this.setState({ email: e.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={e => this.setState({ password: e.target.value })}
-          />
-          <button>Login</button>
-        </form>
+      <div className="container d-flex">
+        <div className="row">
+          <div className="col-md-6">
+            <form onSubmit={this.handleLogin}>
+              <h2>Login</h2>
+              <input
+                type="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={e => this.setState({ email: e.target.value })}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={e => this.setState({ password: e.target.value })}
+              />
+              <button>Login</button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
