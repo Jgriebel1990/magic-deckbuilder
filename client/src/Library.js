@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import mtg from "mtgsdk";
 import fb from "./firebase-app";
 import { db } from "./firebase-app";
-import './CSS/library.css'
+import "./CSS/library.css";
 
 class Library extends Component {
   constructor() {
@@ -90,15 +90,13 @@ class Library extends Component {
           binder: response.docs[0].data().cards
         })
       );
-      
   }
 
   updateDeck(e) {
-    const deckRef = db.collection("decks").doc("2O1GT3vZrg5NNoOKs4HU")
-    const updateSingle = deckRef
-      .update({
-        cards: this.state.binder
-      })
+    const deckRef = db.collection("decks").doc("2O1GT3vZrg5NNoOKs4HU");
+    const updateSingle = deckRef.update({
+      cards: this.state.binder
+    });
   }
 
   render() {
@@ -116,21 +114,19 @@ class Library extends Component {
     // }
     return (
       <div className="container">
-        <div className='row'>
-          <div className='col'>
+        <div className="row">
+          <div className="col">
             <h1>Card Library</h1>
             <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              onChange={e => this.setState({ search: e.target.value })}
-              value={this.state.search}
+              <input
+                type="text"
+                onChange={e => this.setState({ search: e.target.value })}
+                value={this.state.search}
               />
             </form>
-            <section className='scroll-box'>
-              {images}
-            </section>
+            <section className="scroll-box">{images}</section>
           </div>
-          <div className='col'>
+          <div className="col scroll-box">
             <h1>Binder</h1>
             {this.state.binder.map((url, index) => (
               <img
@@ -139,19 +135,19 @@ class Library extends Component {
                 onClick={() => this.removeCard(index)}
               />
             ))}
-            <button
-            className="btn btn-primary"
-            onClick={index => this.removeDeck(index)}
-            >
-            Reset
-            </button>
-            <button onClick={() => this.saveBinder()}>Save</button>
-            <button onClick={() => this.retrieveDecks()}>
-            Retrieve Saved Deck
-            </button>
-            <button onClick={() => this.updateDeck()}>Update</button>
           </div>
         </div>
+        <button
+          className="btn btn-primary"
+          onClick={index => this.removeDeck(index)}
+        >
+          Reset
+        </button>
+        <button onClick={() => this.saveBinder()}>Save</button>
+        <button onClick={() => this.retrieveDecks()}>
+          Retrieve Saved Deck
+        </button>
+        <button onClick={() => this.updateDeck()}>Update</button>
       </div>
     );
   }
