@@ -1,7 +1,16 @@
 .scroll-box {
-    height: 500px;
-    width: 500px;
+    height: 39rem;
+    width: 15rem;
     border: 1px solid white;
     font: 16px/26px;
-    overflow: auto;
+    overflow: scroll;
+}
+
+.card{
+    height: 40rem;
+    width: 15rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 4px grey;
 }

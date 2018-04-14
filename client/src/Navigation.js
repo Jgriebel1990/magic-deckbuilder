@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import fb from './firebase-app';
+import './CSS/nav.css'
 
 class Navigation extends Component {
 
@@ -20,20 +21,21 @@ class Navigation extends Component {
 
     const loggedOutStyles = {
       visibility: this.props.uid ? 'hidden' : 'visible',
-      opacity: this.props.uid ? 0 : 1
+      opacity: this.props.uid ? 0 : 1,
     }
     const { history } = this.props;
     return (
-      <nav className="navbar navbar-light bg-light">
+      <nav className="nav navbar">
         <div className="form-inline">
-          <Link className="btn btn-primary" style={loggedOutStyles} to="/signup">
+          <Link className="signup--btn btn" style={loggedOutStyles} to="/signup">
             Signup
           </Link>
-          <Link className="btn btn-primary" style={loggedOutStyles} to="/login">
+          <Link className="login--btn btn" style={loggedOutStyles} to="/login">
             Login
           </Link>
-          {/* <Link className='btn btn-primary' style={loggedInStyles} to='library'>Home</Link> */}
-          <button className='btn btn-primary' style={loggedInStyles} onClick={this.handleLogout}>Logout</button>
+          <Link className='btn home--btn' style={loggedInStyles} to='library'>Home</Link>
+          <button className='btn logout--btn' style={loggedInStyles} onClick={this.handleLogout}>Logout</button>
+          <span className='nav--span'> Magic Deck Builder </span>
         </div>
       </nav>
     );

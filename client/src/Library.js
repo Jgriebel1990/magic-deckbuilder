@@ -87,15 +87,15 @@ class Library extends Component {
       .get()
       .then(response =>
         this.setState({
-          binder: response.docs[0].data().cards
+          binder: response.docs[0].data().cards,
         })
       );
-  }
+    }
 
   updateDeck(e) {
-    const deckRef = db.collection("decks").doc("2O1GT3vZrg5NNoOKs4HU");
+    const deckRef = db.collection("decks").doc('mR0ITaX7u3Y3THxl2pHZ');
     const updateSingle = deckRef.update({
-      cards: this.state.binder
+      cards: this.state.binder,
     });
   }
 
@@ -129,7 +129,7 @@ class Library extends Component {
           <div className="col scroll-box">
             <h1>Binder</h1>
             {this.state.binder.map((url, index) => (
-              <img
+              <img className=''
                 src={url}
                 key={url + index}
                 onClick={() => this.removeCard(index)}

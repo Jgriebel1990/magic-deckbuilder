@@ -1,0 +1,90 @@
+.signup--btn{
+    padding: 1rem;
+    height: 5rem;
+    width: 13rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    background: rgb(26, 26, 26);
+    color: rgb(134, 122, 216);
+    text-align: center;
+}
+
+.signup--btn:hover{
+    text-shadow: 0 1px 8px black;
+    box-shadow: 0 1px 8px black;
+    color: rgb(160, 152, 206);
+    background-color: rgb(41, 41, 41);
+}
+
+.login--btn{
+    margin-left: .5rem;
+    padding: 1rem;
+    height: 5rem;
+    width: 13rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    background: rgb(26, 26, 26);
+    color: rgb(134, 122, 216);
+    text-align: center;
+}
+
+.login--btn:hover {
+    text-shadow: 0 1px 8px black;
+    box-shadow: 0 1px 8px black;
+    color: rgb(160, 152, 206);
+    background-color: rgb(41, 41, 41);
+    
+}
+
+.home--btn{
+    margin-left: -26.5rem;
+    padding: 1rem;
+    height: 5rem;
+    width: 13rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    background: rgb(26, 26, 26);
+    color: rgb(160, 152, 206);
+    text-align: center;
+}
+
+.home--btn:hover{
+    text-shadow: 0 1px 8px black;
+    box-shadow: 0 1px 8px black;
+    color: rgb(160, 152, 206);
+    background-color: rgb(41, 41, 41);
+}
+
+.logout--btn{
+    margin-left: .5rem;
+    padding: 1rem;
+    height: 5rem;
+    width: 13rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    background: rgb(26, 26, 26);
+    color: rgb(134, 122, 216);
+    text-align: center;
+}
+
+.logout--btn:hover {
+    text-shadow: 0 1px 8px black;
+    box-shadow: 0 1px 8px black;
+    color: rgb(160, 152, 206);
+    background-color: rgb(41, 41, 41);
+    
+}
+
+.nav{
+    background-color: rgb(50, 48, 53);
+    box-shadow: 0 1px 8px rgb(160, 152, 206);
+    border-bottom: rgb(160, 152, 206) 1px solid;
+}
+
+.nav--span{
+    margin-left: 20rem;
+    margin-bottom: .5rem;
+    text-shadow: 0 3px 8px black;
+    color: rgb(134, 122, 216);
+    font-size: 3rem;
+}
