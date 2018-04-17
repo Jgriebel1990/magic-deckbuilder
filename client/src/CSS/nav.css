@@ -11,10 +11,10 @@
 }
 
 .signup-nav--btn:hover{
-    text-shadow: 0 1px 8px black;
-    box-shadow: 0 1px 8px black;
+    text-shadow: 0 1px 8px slategrey;
+    box-shadow: 0 1px 8px slategrey;
     color: rgb(160, 152, 206);
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(29, 29, 29);
 }
 
 .login-nav--btn{
@@ -31,10 +31,10 @@
 }
 
 .login-nav--btn:hover {
-    text-shadow: 0 1px 8px black;
-    box-shadow: 0 1px 8px black;
+    text-shadow: 0 1px 8px slategrey;
+    box-shadow: 0 1px 8px slategrey;
     color: rgb(160, 152, 206);
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(29, 29, 29);
     
 }
 
@@ -48,13 +48,14 @@
     background: rgb(26, 26, 26);
     color: rgb(134, 122, 216);
     text-align: center;
+    border-radius: 15px;
 }
 
 .home--btn:hover{
-    text-shadow: 0 1px 8px black;
-    box-shadow: 0 1px 8px black;
+    text-shadow: 0 1px 8px slategrey;
+    box-shadow: 0 1px 8px slategrey;
     color: rgb(160, 152, 206);
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(29, 29, 29);
 }
 
 .logout--btn{
@@ -67,11 +68,12 @@
     background: rgb(26, 26, 26);
     color: rgb(134, 122, 216);
     text-align: center;
+    border-radius: 15px;
 }
 
 .logout--btn:hover {
-    text-shadow: 0 1px 8px black;
-    box-shadow: 0 1px 8px black;
+    text-shadow: 0 1px 8px slategrey;
+    box-shadow: 0 1px 8px slategrey;
     color: rgb(160, 152, 206);
     background-color: rgb(41, 41, 41);
     
@@ -84,9 +86,9 @@
 }
 
 .nav--span{
-    margin-left: 28rem;
+    margin-left: 33rem;
     margin-bottom: .5rem;
     text-shadow: 0 3px 8px black;
-    color: rgb(134, 122, 216);
+    color: rgb(212, 167, 255);
     font-size: 3rem;
 }

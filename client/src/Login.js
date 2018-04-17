@@ -44,7 +44,7 @@ class Login extends Component {
                 value={this.state.password}
                 onChange={e => this.setState({ password: e.target.value })}
               />
-              <button className='login-form--btn'>Login</button>
+              <button className='login-form--btn btn'>Login</button>
             </form>
           </div>
         </div>

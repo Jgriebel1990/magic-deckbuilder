@@ -9,14 +9,15 @@
     color: rgb(134, 122, 216);
     border-radius: 15px;
     border: 1px solid rgb(26, 26, 26);
-    transition: background-color rgb(41, 41, 41) 1sec;
+    transition: background-color rgb(41, 41, 41) 5s;
+    cursor: pointer;
 }
 
 .login-form--btn:hover {
-    text-shadow: 0 1px 8px black;
-    box-shadow: 0 1px 8px black;
+    text-shadow: 0 1px 8px slategrey;
+    box-shadow: 0 1px 8px slategrey;
     color: rgb(160, 152, 206);
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(29, 29, 29);
 }
 
 .form{
@@ -39,7 +40,7 @@
     margin-right: 5rem;
     margin-left: 30rem;
     text-shadow: 0 3px 8px slategray;
-    color: rgb(134, 122, 216);
+    color: rgb(212, 167, 255);
 }
 
 .form::placeholder{

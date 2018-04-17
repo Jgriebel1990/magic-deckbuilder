@@ -128,10 +128,10 @@ class Library extends Component {
             </form>
             <section className="scroll-box">{images}</section>
           </div>
+          <h1 className='binder-txt'>Deck</h1>
           <div className="scroll-box--binder">
             {this.state.binder.map((url, index) => (
               <img
-                className=""
                 src={url}
                 key={url + index}
                 onClick={() => this.removeCard(index)}
@@ -144,11 +144,11 @@ class Library extends Component {
           >
             Reset
           </button>
-          <button className='save-btn' onClick={() => this.saveBinder()}>Save</button>
-          <button className='retrieve-btn' onClick={() => this.retrieveDecks()}>
-            Retrieve Saved Deck
+          <button className='save-btn btn' onClick={() => this.saveBinder()}>Save</button>
+          <button className='retrieve-btn btn' onClick={() => this.retrieveDecks()}>
+            Retrieve Deck
           </button>
-          <button className='update-btn' onClick={(e) => this.updateDeck()}>Update</button>
+          <button className='update-btn btn' onClick={(e) => this.updateDeck()}>Update</button>
         </div>
       </div>
     );
