@@ -5,9 +5,9 @@
     margin-top: 8rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
-    background-color: rgb(26, 26, 26);
+    background-color: rgba(50, 50, 50);
     color: rgb(134, 122, 216);
-    border-radius: 5px;
+    border-radius: 15px;
     border: 1px solid rgb(26, 26, 26);
     transition: background-color rgb(41, 41, 41) 1sec;
 }
@@ -29,8 +29,8 @@
     border: 1px solid black;
     border-radius: 5px;
     font-size: 2rem;
-    background-color: rgb(26, 26, 26);
-    color: rgb(134, 122, 216);
+    background-color: rgba(61, 61, 61, 0.699);
+    color: rgb(199, 190, 255);
     box-shadow: 0 1px 8px black;
 }
 
@@ -46,5 +46,5 @@
 }
 
 .form::placeholder{
-    color: rgb(134, 122, 216, 0.781);
+    color: rgba(199, 190, 255, 0.699)
 }

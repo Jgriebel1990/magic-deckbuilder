@@ -4,9 +4,10 @@
     width: 13rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
-    background: rgb(26, 26, 26);
+    background: rgb(10, 10, 10);
     color: rgb(134, 122, 216);
     text-align: center;
+    border-radius: 15px;
 }
 
 .signup-nav--btn:hover{
@@ -23,9 +24,10 @@
     width: 13rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
-    background: rgb(26, 26, 26);
+    background: rgb(10, 10, 10);
     color: rgb(134, 122, 216);
     text-align: center;
+    border-radius: 15px;
 }
 
 .login-nav--btn:hover {
