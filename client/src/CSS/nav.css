@@ -76,13 +76,13 @@
 }
 
 .nav{
-    background-color: rgb(50, 48, 53);
+    background-color: rgba(50, 48, 53, 0.699);
     box-shadow: 0 1px 8px rgb(160, 152, 206);
     border-bottom: rgb(160, 152, 206) 1px solid;
 }
 
 .nav--span{
-    margin-left: 20rem;
+    margin-left: 28rem;
     margin-bottom: .5rem;
     text-shadow: 0 3px 8px black;
     color: rgb(134, 122, 216);
