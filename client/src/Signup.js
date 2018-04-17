@@ -27,20 +27,22 @@ class Signup extends Component {
         <div className="row">
           <div className='col-md-6'>
             <form onSubmit={this.handleSignup}>
-              <h2>Signup</h2>
+              <h2 className='signup-form--text'>Signup</h2>
               <input
+                className='form'
                 type="email"
                 placeholder="Email"
                 value={this.state.email}
                 onChange={e => this.setState({ email: e.target.value })}
               />
               <input
+                className='form'
                 type="password"
                 placeholder="Password"
                 value={this.state.password}
                 onChange={e => this.setState({ password: e.target.value })}
               />
-              <button onSubmit={this.handleSignup}>Signup</button>
+              <button className='signup-form--btn'>Signup</button>
             </form>
           </div>
         </div>

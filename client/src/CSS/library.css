@@ -1,9 +1,24 @@
 .scroll-box {
+    margin-right: 10rem;
     height: 39rem;
     width: 15rem;
     border: 1px solid white;
     font: 16px/26px;
     overflow: scroll;
+}
+
+.scroll-box--binder {
+    margin-top: 5.3rem;
+    height: 39rem;
+    width: 45rem;
+    border: 1px solid white;
+    font: 16px/26px;
+    overflow: scroll;
+}
+
+.binder-txt{
+    margin-left: 7rem;
+    font-size: 2rem;
 }
 
 .card{
@@ -13,4 +28,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 4px 4px 4px grey;
+}
+
+.rst-btn{
+    border: 1px black solid;
+    border-radius: 2px;
+    margin-left: 17rem;
+    margin-block-end: 25rem;
+}
+
+.save-btn{
+    border: 1px black solid;
+    border-radius: 2px;
+    margin-left: 17rem;
+    margin-block-end: 25rem;
 }

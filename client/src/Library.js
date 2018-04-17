@@ -87,15 +87,15 @@ class Library extends Component {
       .get()
       .then(response =>
         this.setState({
-          binder: response.docs[0].data().cards,
+          binder: response.docs[0].data().cards
         })
       );
-    }
+  }
 
   updateDeck(e) {
-    const deckRef = db.collection("decks").doc('mR0ITaX7u3Y3THxl2pHZ');
+    const deckRef = db.collection("decks").doc("mR0ITaX7u3Y3THxl2pHZ");
     const updateSingle = deckRef.update({
-      cards: this.state.binder,
+      cards: this.state.binder
     });
   }
 
@@ -115,7 +115,7 @@ class Library extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="">
             <h1>Card Library</h1>
             <form onSubmit={this.handleSubmit}>
               <input
@@ -126,28 +126,28 @@ class Library extends Component {
             </form>
             <section className="scroll-box">{images}</section>
           </div>
-          <div className="col scroll-box">
-            <h1>Binder</h1>
+          <div className="scroll-box--binder">
             {this.state.binder.map((url, index) => (
-              <img className=''
+              <img
+                className=""
                 src={url}
                 key={url + index}
                 onClick={() => this.removeCard(index)}
               />
             ))}
           </div>
+          <button
+            className="btn rst-btn"
+            onClick={index => this.removeDeck(index)}
+          >
+            Reset
+          </button>
+          <button className='save-btn' onClick={() => this.saveBinder()}>Save</button>
+          <button onClick={() => this.retrieveDecks()}>
+            Retrieve Saved Deck
+          </button>
+          <button onClick={() => this.updateDeck()}>Update</button>
         </div>
-        <button
-          className="btn btn-primary"
-          onClick={index => this.removeDeck(index)}
-        >
-          Reset
-        </button>
-        <button onClick={() => this.saveBinder()}>Save</button>
-        <button onClick={() => this.retrieveDecks()}>
-          Retrieve Saved Deck
-        </button>
-        <button onClick={() => this.updateDeck()}>Update</button>
       </div>
     );
   }

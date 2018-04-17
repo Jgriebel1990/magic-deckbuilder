@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import fb from "./firebase-app";
 import Library from "./Library";
+import './CSS/login.css'
 
 class Login extends Component {
   constructor() {
@@ -28,20 +29,22 @@ class Login extends Component {
         <div className="row">
           <div className="col-md-6">
             <form onSubmit={this.handleLogin}>
-              <h2>Login</h2>
+              <h2 className='login-form--text'>Login</h2>
               <input
+                className='form'
                 type="email"
                 placeholder="Email"
                 value={this.state.email}
                 onChange={e => this.setState({ email: e.target.value })}
               />
               <input
+                className='form'
                 type="password"
                 placeholder="Password"
                 value={this.state.password}
                 onChange={e => this.setState({ password: e.target.value })}
               />
-              <button>Login</button>
+              <button className='login-form--btn'>Login</button>
             </form>
           </div>
         </div>

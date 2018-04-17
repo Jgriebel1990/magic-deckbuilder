@@ -27,10 +27,10 @@ class Navigation extends Component {
     return (
       <nav className="nav navbar">
         <div className="form-inline">
-          <Link className="signup--btn btn" style={loggedOutStyles} to="/signup">
+          <Link className="signup-nav--btn btn" style={loggedOutStyles} to="/signup">
             Signup
           </Link>
-          <Link className="login--btn btn" style={loggedOutStyles} to="/login">
+          <Link className="login-nav--btn btn" style={loggedOutStyles} to="/login">
             Login
           </Link>
           <Link className='btn home--btn' style={loggedInStyles} to='library'>Home</Link>

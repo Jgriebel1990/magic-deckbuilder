@@ -1,4 +1,4 @@
-.signup-form--btn{
+.login-form--btn{
     height: 5rem;
     width: 13rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -10,7 +10,7 @@
     transition: background-color rgb(41, 41, 41) 1sec;
 }
 
-.signup-form--btn:hover {
+.login-form--btn:hover {
     text-shadow: 0 1px 8px black;
     box-shadow: 0 1px 8px black;
     color: rgb(160, 152, 206);
@@ -29,7 +29,7 @@
     box-shadow: 0 1px 8px black;
 }
 
-.signup-form--text{
+.login-form--text{
     font-size: 4rem;
     text-align: center;
     margin-right: 5rem;
@@ -37,5 +37,5 @@
 }
 
 .form::placeholder{
-    color: rgb(134, 122, 216, 0.781);
+    color: rgb(255, 255, 255);
 }

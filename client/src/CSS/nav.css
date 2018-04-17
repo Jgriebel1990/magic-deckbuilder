@@ -1,4 +1,4 @@
-.signup--btn{
+.signup-nav--btn{
     padding: 1rem;
     height: 5rem;
     width: 13rem;
@@ -9,14 +9,14 @@
     text-align: center;
 }
 
-.signup--btn:hover{
+.signup-nav--btn:hover{
     text-shadow: 0 1px 8px black;
     box-shadow: 0 1px 8px black;
     color: rgb(160, 152, 206);
     background-color: rgb(41, 41, 41);
 }
 
-.login--btn{
+.login-nav--btn{
     margin-left: .5rem;
     padding: 1rem;
     height: 5rem;
@@ -28,7 +28,7 @@
     text-align: center;
 }
 
-.login--btn:hover {
+.login-nav--btn:hover {
     text-shadow: 0 1px 8px black;
     box-shadow: 0 1px 8px black;
     color: rgb(160, 152, 206);
@@ -44,7 +44,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
     background: rgb(26, 26, 26);
-    color: rgb(160, 152, 206);
+    color: rgb(134, 122, 216);
     text-align: center;
 }
 
