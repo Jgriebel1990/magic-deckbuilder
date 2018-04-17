@@ -12,7 +12,7 @@ class Library extends Component {
       cards: [],
       search: "",
       binder: [],
-      didUpdate: true
+      didUpdate: []
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -93,10 +93,11 @@ class Library extends Component {
   }
 
   updateDeck(e) {
-    const deckRef = db.collection("decks").doc("mR0ITaX7u3Y3THxl2pHZ");
+    const deckRef = db.collection("decks").doc();
     const updateSingle = deckRef.update({
       cards: this.state.binder
     });
+    console.log(deckRef);
   }
 
   render() {
@@ -113,12 +114,13 @@ class Library extends Component {
     //   opacity: this.state.didUpdate ? 1 : 0,
     // }
     return (
-      <div className="container">
-        <div className="row">
+      <div className="">
+        <div className="">
           <div className="">
-            <h1>Card Library</h1>
+            <h1 className='card-lib'>Card Library</h1>
             <form onSubmit={this.handleSubmit}>
               <input
+                className='lib-form'
                 type="text"
                 onChange={e => this.setState({ search: e.target.value })}
                 value={this.state.search}
@@ -143,10 +145,10 @@ class Library extends Component {
             Reset
           </button>
           <button className='save-btn' onClick={() => this.saveBinder()}>Save</button>
-          <button onClick={() => this.retrieveDecks()}>
+          <button className='retrieve-btn' onClick={() => this.retrieveDecks()}>
             Retrieve Saved Deck
           </button>
-          <button onClick={() => this.updateDeck()}>Update</button>
+          <button className='update-btn' onClick={(e) => this.updateDeck()}>Update</button>
         </div>
       </div>
     );

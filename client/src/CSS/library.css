@@ -1,10 +1,18 @@
 .scroll-box {
-    margin-right: 10rem;
+    margin-left: 4.5rem;
     height: 39rem;
     width: 15rem;
     border: 1px solid white;
     font: 16px/26px;
     overflow: scroll;
+}
+
+.card-lib{
+    margin-left: 4.8rem;
+}
+
+.lib-form{
+    margin-left: 6.2rem;
 }
 
 .scroll-box--binder {
@@ -14,6 +22,9 @@
     border: 1px solid white;
     font: 16px/26px;
     overflow: scroll;
+    margin-left: 43.5rem;
+    position: absolute;
+    bottom: -3rem;
 }
 
 .binder-txt{
@@ -33,13 +44,38 @@
 .rst-btn{
     border: 1px black solid;
     border-radius: 2px;
-    margin-left: 17rem;
-    margin-block-end: 25rem;
+    margin-left: 7rem;
+    position: absolute;
+    left: 21.5rem;
+    bottom: 33.6rem;
+   
 }
 
 .save-btn{
     border: 1px black solid;
     border-radius: 2px;
     margin-left: 17rem;
-    margin-block-end: 25rem;
+    position: absolute;
+    left: 11.5rem;
+    bottom: 28.6rem;
+   
+}
+
+.retrieve-btn{
+    border: 1px black solid;
+    border-radius: 2px;
+    margin-left: 17rem;
+    position: absolute;
+    left: 10rem;
+    bottom: 23.6rem;
+}
+
+.update-btn{
+    border: 1px black solid;
+    border-radius: 2px;
+    margin-left: 17rem;
+    position: absolute;
+    left: 11rem;
+    bottom: 18.6rem;
+   
 }
