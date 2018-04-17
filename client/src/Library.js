@@ -98,7 +98,8 @@ class Library extends Component {
   updateDeck(e) {
     const deckRef = db.collection("decks").doc('2qbTFZqX78inJvIviBd6');
     const updateSingle = deckRef.update({
-      cards: this.state.binder
+      cards: this.state.binder,
+      userId: this.props.user.uid
     });
     console.log(deckRef);
   }
@@ -149,8 +150,8 @@ class Library extends Component {
           >
             Reset
           </button>
-          <button className='save-btn btn' onClick={() => this.saveBinder()}>Save</button>
-          <button className='retrieve-btn btn' onClick={() => this.retrieveDecks()}>
+          <button className='save-btn btn' onClick={(e) => this.saveBinder()}>Save</button>
+          <button className='retrieve-btn btn' onClick={(e) => this.retrieveDecks()}>
             Retrieve Deck
           </button>
           <button className='update-btn btn' onClick={(e) => this.updateDeck()}>Update</button>
