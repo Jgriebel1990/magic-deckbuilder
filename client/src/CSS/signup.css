@@ -1,6 +1,8 @@
 .signup-form--btn{
     height: 5rem;
     width: 13rem;
+    margin-left: 29rem;
+    margin-top: 8rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
     background-color: rgb(26, 26, 26);
@@ -20,7 +22,10 @@
 .form{
     height: 3rem;
     width: 26rem;
+    position: relative;
+    top: 8rem;
     margin-bottom: 1rem;
+    margin-left: 22.5rem;
     border: 1px solid black;
     border-radius: 5px;
     font-size: 2rem;
@@ -32,8 +37,12 @@
 .signup-form--text{
     font-size: 4rem;
     text-align: center;
+    position: relative;
+    top: 6rem;
     margin-right: 5rem;
+    margin-left: 29.5rem;
     text-shadow: 0 3px 8px slategray;
+    color: rgb(134, 122, 216);
 }
 
 .form::placeholder{

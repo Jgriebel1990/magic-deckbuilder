@@ -2,7 +2,7 @@
     margin-left: 4.5rem;
     height: 39rem;
     width: 15rem;
-    border: 1px solid white;
+    border: 1px;
     font: 16px/26px;
     overflow: scroll;
 }
@@ -19,7 +19,7 @@
     margin-top: 5.3rem;
     height: 39rem;
     width: 45rem;
-    border: 1px solid white;
+    border: 1px;
     font: 16px/26px;
     overflow: scroll;
     margin-left: 43.5rem;
