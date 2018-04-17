@@ -107,6 +107,7 @@ class Library extends Component {
         onClick={() => this.handleBinder(index)}
         src={url}
         key={url + index}
+        alt={url}
       />
     ));
     // const updateSuccessful = {
@@ -132,6 +133,7 @@ class Library extends Component {
           <div className="scroll-box--binder">
             {this.state.binder.map((url, index) => (
               <img
+                alt={url}
                 src={url}
                 key={url + index}
                 onClick={() => this.removeCard(index)}

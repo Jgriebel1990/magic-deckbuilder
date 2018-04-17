@@ -38,6 +38,7 @@ class App extends Component {
           <Route path="/login" exact component={Login} />
           <Redirect path="/signup/*" to="/signup" />
           <Route path="/signup" exact component={Signup} />
+          <Route path='/*' exact component={Signup} />
         </Switch>
       </div>
     );

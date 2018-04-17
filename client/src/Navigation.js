@@ -33,7 +33,7 @@ class Navigation extends Component {
           <Link className="login-nav--btn btn" style={loggedOutStyles} to="/login">
             Login
           </Link>
-          <Link className='btn home--btn' style={loggedInStyles} to='library'>Home</Link>
+          <Link className='btn home--btn' style={loggedInStyles} to='/library'>Home</Link>
           <button className='btn logout--btn' style={loggedInStyles} onClick={this.handleLogout}>Logout</button>
           <span className='nav--span'> Magic Deck Builder </span>
         </div>
