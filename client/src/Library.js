@@ -89,11 +89,14 @@ class Library extends Component {
         this.setState({
           binder: response.docs[0].data().cards
         })
-      );
+      )
+      .catch(function(error) {
+        msg: error
+      })
   }
 
   updateDeck(e) {
-    const deckRef = db.collection("decks").doc();
+    const deckRef = db.collection("decks").doc('2qbTFZqX78inJvIviBd6');
     const updateSingle = deckRef.update({
       cards: this.state.binder
     });
